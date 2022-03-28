@@ -14,12 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->string('nim');
-            $table->string('kelas');
-            $table->string('jurusan');
-            $table->string('no_handphone');
+            $table->string('nim',10)->primary();
+            $table->string('nama',255);
+            $table->string('kelas',100);
+            $table->string('jurusan',100);
+            $table->string('no_handphone',12);
             $table->timestamps();
         });
     }

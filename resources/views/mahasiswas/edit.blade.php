@@ -19,28 +19,28 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="post" action="{{ route('mahasiswa.update', $Mahasiswa->Nim) }}" id="myForm">
+                    <form method="post" action="{{ route('mahasiswa.update', $Mahasiswa->nim) }}" id="myForm">
                     @csrf
                     @method('PUT')
                         <div class="form-group">
-                            <label for="Nim">Nim</label> 
-                            <input type="text" name="Nim" class="form-control" id="Nim" value="{{ $Mahasiswa->Nim }}" ariadescribedby="Nim" > 
+                            <label for="nim">Nim</label> 
+                            <input type="text" name="nim" class="form-control" id="Nim" value="{{ $Mahasiswa->nim }}" aria-describedby="Nim" > 
                         </div>
                         <div class="form-group">
-                            <label for="Nama">Nama</label> 
-                            <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $Mahasiswa->Nama }}" ariadescribedby="Nama" > 
+                            <label for="nama">Nama</label> 
+                            <input type="text" name="nama" class="form-control" id="Nama" value="{{ $Mahasiswa->nama }}" aria-describedby="Nama" > 
                         </div>
                         <div class="form-group">
-                            <label for="Kelas">Kelas</label> 
-                            <input type="Kelas" name="Kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->Kelas }}" ariadescribedby="Kelas" > 
+                            <label for="kelas">Kelas</label> 
+                            <input type="Kelas" name="kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas }}" aria-describedby="Kelas" > 
                         </div>
                         <div class="form-group">
-                            <label for="Jurusan">Jurusan</label> 
-                            <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan" value="{{ $Mahasiswa->Jurusan }}" ariadescribedby="Jurusan" > 
+                            <label for="jurusan">Jurusan</label> 
+                            <input type="Jurusan" name="jurusan" class="form-control" id="Jurusan" value="{{ $Mahasiswa->jurusan }}" aria-describedby="Jurusan" > 
                         </div>
                         <div class="form-group">
-                            <label for="No_Handphone">No_Handphone</label> 
-                            <input type="No_Handphone" name="No_Handphone" class="form-control" id="No_Handphone" value="{{ $Mahasiswa->No_Handphone }}" ariadescribedby="No_Handphone" > 
+                            <label for="no_handphone">No Handphone</label> 
+                            <input type="No_Handphone" name="no_handphone" class="form-control" id="No_Handphone" value="{{ $Mahasiswa->no_handphone }}" aria-describedby="No_Handphone" > 
                         </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
