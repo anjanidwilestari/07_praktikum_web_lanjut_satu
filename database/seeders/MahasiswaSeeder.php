@@ -24,5 +24,6 @@ class MahasiswaSeeder extends Seeder
             'tanggal_lahir'=>'2002-04-08',
         ];
         \DB::table('mahasiswas')->insert($data);
+        
     }
 }
