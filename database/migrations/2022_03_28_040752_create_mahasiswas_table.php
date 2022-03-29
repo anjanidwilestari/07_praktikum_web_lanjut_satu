@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama',255);
             $table->string('kelas',100);
             $table->string('jurusan',100);
-            $table->string('no_handphone',13);
+            $table->string('no_handphone',30);
             $table->string('email');
             $table->date('tanggal_lahir');
             $table->timestamps();

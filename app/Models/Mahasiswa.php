@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model //Definisi Model
 {
+    use HasFactory;
     protected $table="mahasiswas"; //Eloquent akan membuat model mahasiswa menyimpan record di tabel mahasiswas
     public $timestamps= false; 
     protected $primaryKey = 'nim'; // Memanggil isi DB Dengan primarykey
@@ -29,5 +30,12 @@ class Mahasiswa extends Model //Definisi Model
         'email',
         'tanggal_lahir',
     ];
+    public function run()
+    {
+        Mahasiswa::factory()
+                ->count(50)
+                ->hasPosts(1)
+                ->create();
+    }
 };
 
