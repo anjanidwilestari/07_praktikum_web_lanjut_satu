@@ -12,13 +12,26 @@ class MahasiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //fungsi  eloquent  menampilkan  data  menggunakan  pagination
-        $mahasiswas = Mahasiswa::simplePaginate(5);  //Mengambil semua  isi  tabel
-        $posts = Mahasiswa::orderBy('nim', 'desc')->paginate(5); 
-        return view('mahasiswas.index',  compact('mahasiswas')) 
-        ->with('i', (request()->input('page', 1)-1)* 5);
+        
+
+        //melakukan pencarian
+        if($request->has('cari')){
+            $mahasiswas=Mahasiswa::where('nama','like','%'.$request->cari.'%')->paginate(5);
+            return view('mahasiswas.index',  compact('mahasiswas')) 
+                ->with('success', 'Mahasiswa Berhasil Ditampilkan');
+        }
+        else{
+            //fungsi  eloquent  menampilkan  data  menggunakan  pagination
+            // $mahasiswas = Mahasiswa::simplePaginate(5);  //Mengambil semua  isi  tabel
+            $mahasiswas = Mahasiswa::orderBy('nama', 'asc')->paginate(5); 
+            return view('mahasiswas.index',  compact('mahasiswas')) 
+                ->with('i', (request()->input('page', 1)-1)* 5);
+        }
+        
+        
+
     }
 
     /**
@@ -127,4 +140,5 @@ class MahasiswaController extends Controller
             -> with('success', 'Mahasiswa Berhasil Dihapus');
 
     }
+    
 };
