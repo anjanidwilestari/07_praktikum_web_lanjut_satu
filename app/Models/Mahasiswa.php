@@ -30,12 +30,6 @@ class Mahasiswa extends Model //Definisi Model
         'email',
         'tanggal_lahir',
     ];
-    public function run()
-    {
-        Mahasiswa::factory()
-                ->count(50)
-                ->hasPosts(1)
-                ->create();
-    }
+    
 };
 
