@@ -15,8 +15,8 @@ class MahasiswaController extends Controller
     public function index()
     {
         //fungsi  eloquent  menampilkan  data  menggunakan  pagination
-        $mahasiswas = Mahasiswa::all();  //Mengambil semua  isi  tabel
-        $posts = Mahasiswa::orderBy('nim', 'desc')->paginate(6); 
+        $mahasiswas = Mahasiswa::simplePaginate(5);  //Mengambil semua  isi  tabel
+        $posts = Mahasiswa::orderBy('nim', 'desc')->paginate(5); 
         return view('mahasiswas.index',  compact('mahasiswas')) 
         ->with('i', (request()->input('page', 1)-1)* 5);
     }
@@ -45,7 +45,7 @@ class MahasiswaController extends Controller
             'nama' => 'required',
             'kelas' => 'required',
             'jurusan' => 'required',
-            'no_handphone'=>'required|min:12|numeric',
+            'no_handphone'=>'required|min:10|numeric',
             'email'=>'required|email',
             'tanggal_lahir'=>'required',
         ]);
@@ -100,8 +100,8 @@ class MahasiswaController extends Controller
             'nama' => 'required',
             'kelas' => 'required',
             'jurusan' => 'required',
-            'no_handphone' => 'required',
-            'email'=>'required',
+            'no_handphone'=>'required|min:10|numeric',
+            'email'=>'required|email',
             'tanggal_lahir'=>'required',
         ]);
 
