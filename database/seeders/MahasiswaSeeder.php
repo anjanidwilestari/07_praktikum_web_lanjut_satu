@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MahasiswaSeeder extends Seeder
 {
@@ -23,7 +24,7 @@ class MahasiswaSeeder extends Seeder
             'email'=>'ayianjani774@gmail.com',
             'tanggal_lahir'=>'2002-04-08',
         ];
-        \DB::table('mahasiswas')->insert($data);
+        DB::table('mahasiswas')->insert($data);
         
     }
 }
