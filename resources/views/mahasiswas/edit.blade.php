@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label for="kelas">Kelas</label> 
-                            <input type="Kelas" name="kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas }}" aria-describedby="Kelas" > 
+                            <input type="Kelas" name="kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas->nama_kelas }}" aria-describedby="Kelas" > 
                         </div>
                         <div class="form-group">
                             <label for="jurusan">Jurusan</label> 
