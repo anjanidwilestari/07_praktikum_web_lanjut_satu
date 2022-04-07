@@ -26,9 +26,10 @@ class MahasiswaController extends Controller
         else{
             //fungsi  eloquent  menampilkan  data  menggunakan  pagination
             //yang semula Mahasiswa::all, diubah menjadi with() yang menyatakan relasi
-            $mahasiswas = Mahasiswa::with('kelas')->get();
-            $paginate = Mahasiswa::orderBy('id_mahasiswa', 'asc')->paginate(3);
-            return view('mahasiswas.index',  ['mahasiswa' => $mahasiswas, 'paginate'=>$paginate]);
+            // $mahasiswas = Mahasiswa::simplePaginate(5);  //Mengambil semua  isi  tabel
+            $mahasiswas = Mahasiswa::with('kelas')->orderBy('nama', 'asc')->paginate(5); 
+            return view('mahasiswas.index',  compact('mahasiswas')) 
+                ->with('i', (request()->input('page', 1)-1)* 5);
         }
     }
 
@@ -39,7 +40,8 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('mahasiswas.create');
+        $kelas = Kelas::all(); //mendapatkan data dari tabel kelas
+        return view('mahasiswas.create', ['kelas'=>$kelas]);
     }
 
     /**

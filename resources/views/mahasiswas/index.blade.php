@@ -42,7 +42,7 @@
             <th>Tanggal Lahir</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($paginate as $Mahasiswa)
+        @foreach ($mahasiswas as $Mahasiswa)
         <tr>
             <td>{{ $Mahasiswa->nim }}</td>
             <td>{{ $Mahasiswa->nama }}</td>
