@@ -31,5 +31,6 @@ return new class extends Migration
             $table->string('kelas');
             $table->dropForeign(['kelas_id']);
         });
+        
     }
 };

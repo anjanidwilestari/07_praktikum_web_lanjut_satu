@@ -17,15 +17,15 @@ class MahasiswaFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'nim'=> $this->faker->unique()->regexify('[0-9]{10}'),
-            'nama'=> $this->faker->name(),
-            'kelas'=> $this->faker->regexify('[1-4]{1}[A-I]{1}'),
-            'jurusan'=> $this->faker->regexify('[T]{1}[EIKM]{1}'),
-            'no_handphone'=> $this->faker->phoneNumber(),
-            'email'=> $this->faker->unique()->safeEmail(),
-            'tanggal_lahir'=> $this->faker->date(),
+    //     return [
+    //         'nim'=> $this->faker->unique()->regexify('[0-9]{10}'),
+    //         'nama'=> $this->faker->name(),
+    //         'kelas'=> $this->faker->regexify('[1-4]{1}[A-I]{1}'),
+    //         'jurusan'=> $this->faker->regexify('[T]{1}[EIKM]{1}'),
+    //         'no_handphone'=> $this->faker->phoneNumber(),
+    //         'email'=> $this->faker->unique()->safeEmail(),
+    //         'tanggal_lahir'=> $this->faker->date(),
             
-        ];
+    //     ];
     }
 }
